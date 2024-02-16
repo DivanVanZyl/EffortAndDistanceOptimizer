@@ -31,11 +31,11 @@ My solution is an algorith, that produduces a badness _b_ score for each index, 
 
 _f_ is simple, as it is just the index of the collection, with a weight attached that defaults to 1 _d_:
 ```math
-_f_ = i\cdot d
+f = i\cdot d
 ```
 _c_ is more complex, as it is an exponential decay function, also with a weight _w_ that defaults to 7:
 ```math
-_c_ = w\cdot e^{-2x}
+c = w\cdot e^{-2x}
 ```
 _c_ with a weight of 7 illustrated:
 <img width="378" alt="image" src="https://github.com/DivanVanZyl/EffortAndDistanceOptimizer/assets/5897077/b42aaa78-ecf6-4ddc-84ca-65a29abde4de">
