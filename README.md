@@ -1,12 +1,12 @@
 # EffortAndDistanceOptimizer
 
 Consider a row of urinals in a public bathroom.
-
+```math
 \begin{bmatrix}
  0  1  2  3  4  5 \\ 
  0  0  0  0  0  0 
 \end{bmatrix}
-
+```
 The top row represents the index of the urinal, and the bottom row represents if a person is standing there. Hence, the above stalls in empty. In this scenario, it is obvious that the ideal position is index 0. Because you are not next to anyone, and it is the shortest distance to walk from the 1st index of the collection.
 
 The objective is to be as far as possible from other people (_c_ for **c**loseness), but also not walk too far (_f_ for e**f**fort).
