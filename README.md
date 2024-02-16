@@ -46,3 +46,8 @@ _c_ with a weight of 7 illustrated:
 <img width="378" alt="image" src="https://github.com/DivanVanZyl/EffortAndDistanceOptimizer/assets/5897077/b42aaa78-ecf6-4ddc-84ca-65a29abde4de">
 
 The reason for the exponential decay, is that it is a lot better to stand one space away from someone else at the urinal, but it is only marginally better to stand 2 spaces away from someone than 1 space away. And the difference between two spaces and 3 is insignificant. But there is a weight _w_ that can be adjusted for this.
+
+The index as the anwser or return value of the algorithm is:
+```min
+min(b)
+```
