@@ -27,7 +27,10 @@ Here, a good spot to stand, may be index 2, because there is a space between the
 ```
 But how do we define this need, and how do we generalize this? 
 
-My solution is an algorithm, that produces a badness _b_ score for each index, then inserts the new person, based on the minimum badness score. The badness score: _b_ =  _f_ + _c_
+My solution is an algorithm, that produces a badness _b_ score for each index, then inserts the new person, based on the minimum badness score. The badness score: 
+```math
+b =  f + c
+```
 
 _f_ is simple, as it is just the index of the collection, with a weight attached that defaults to 1 _d_:
 ```math
