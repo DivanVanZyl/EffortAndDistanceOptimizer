@@ -10,8 +10,8 @@ namespace Optimizations
             int closestOccupiedIndexToLeft = -1;
             int closestOccupiedIndexToRight = -1;
             double leastBadValue = double.MaxValue;
-            bool collectionFull = true; //We cannot return a meaningful value as an int, if the collection is already full.
-            bool possibleElementsToTheRight = true;
+            bool collectionFull = true; //We cannot return a meaningful value as the optimal index, if the collection is already full.
+            bool possibleElementsToTheRight = true; //If there are no elements to the right, we do not run the code to check forward again.
 
             for (int currentIndex = 0; currentIndex < collection.Count; currentIndex++)
             {
@@ -37,12 +37,12 @@ namespace Optimizations
                     }
 
                     //Determine number of elements between current index and the occupied index to the right.
-                    if(possibleElementsToTheRight)
+                    if (possibleElementsToTheRight)
                     {
                         if (currentIndex != collection.Count - 1)    //If we are on the last element in the collection, we don't have to check for an element to the right of the current element.
                         {
                             if (closestOccupiedIndexToRight == -1)
-                            {                           
+                            {
                                 for (int cntForward = currentIndex; cntForward < collection.Count; cntForward++)
                                 {
                                     if (!collection[cntForward].isEmptyElement())
@@ -52,7 +52,7 @@ namespace Optimizations
                                         break;
                                     }
                                 }
-                                if(closestOccupiedIndexToRight == -1)
+                                if (closestOccupiedIndexToRight == -1)
                                     possibleElementsToTheRight = false; //There are no occupied elements to the right anymore, because we have just completed the search to the right and found no occupied elements.
                             }
                             else
@@ -73,7 +73,7 @@ namespace Optimizations
                 else
                 {
                     closestOccupiedIndexToLeft = currentIndex;  //Adjust left occupied space
-                    closestOccupiedIndexToRight = -1;   //Adjust right occupied space. We reset this here. On the next iteration, it will search ahead for the next "right occupied" element.
+                    closestOccupiedIndexToRight = -1;   //Adjust right occupied space. We reset this here. On the next iteration, it will search ahead for the next occupied element.
                 }
             }
 
@@ -82,10 +82,7 @@ namespace Optimizations
             {
                 throw new InvalidOperationException("Collection is full. Cannot return the optimal insertion index.");
             }
-            else
-            {
-                return optimalIndex;
-            }
+            return optimalIndex;
         }
 
         private double EffortValue(int index, double weight)
@@ -127,7 +124,7 @@ namespace Optimizations
             }
             else
             {
-                message = "Could not evaluate type: " + element.GetType();
+                message = "Could not evaluate type: " + element.GetType() + " please pass a delegate that defines the check for occupation.";
             }
             throw new NotSupportedException(message);
         }
