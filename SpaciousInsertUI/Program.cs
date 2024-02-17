@@ -12,7 +12,7 @@ foreach(var item in list)
 
 var alg = new SpaciousInsert();
 
-int optimalIndex = alg.NextOptimalIndex(list);
+int optimalIndex = alg.NextOptimalIndex(list,(x) => !x);
 list[optimalIndex] = true;
 
 Console.WriteLine();
