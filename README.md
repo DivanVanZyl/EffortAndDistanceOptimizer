@@ -32,7 +32,7 @@ My solution is an algorithm, that produces a badness _b_ score for each index, t
 b =  f + c
 ```
 
-_f_ is simple, as it is just the index of the collection, with a weight attached that defaults to 1 _d_:
+_f_ is simple, as it is just the index _i_ of the collection, with a weight attached that defaults to 1 _d_:
 ```math
 f = i\cdot d
 ```
