@@ -51,3 +51,4 @@ The index as the anwser or return value of the algorithm is:
 ```math
 min(b)
 ```
+Meaning, that utimitely what we want, is the index of the collection with the least badness.
