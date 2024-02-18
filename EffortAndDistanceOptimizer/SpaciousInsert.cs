@@ -2,7 +2,7 @@
 
 namespace Optimizations
 {
-    public class SpaciousInsert
+    public sealed class SpaciousInsert
     {
         public int NextOptimalIndex<T>(IReadOnlyList<T> collection, Func<T, bool>? isEmptyElementFunc = null, double effortWeight = 1, double closenessWeight = 7)
         {
