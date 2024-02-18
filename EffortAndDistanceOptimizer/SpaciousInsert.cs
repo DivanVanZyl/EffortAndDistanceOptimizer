@@ -101,6 +101,10 @@ namespace Optimizations
     {
         internal static bool isEmptyElement<T>(this T element)
         {
+            if (element is null)
+            {
+                return true;
+            }
             if (element is int || element is long || element is float || element is short || element is double)
             {
                 return Convert.ToDouble(element) == 0.0;
@@ -116,17 +120,8 @@ namespace Optimizations
                 return false;
             }
 
-            //If you reach this code, the element's type could not be determined.
-            string message;
-            if (element is null)
-            {
-                message = "Could not evaluate type for null element;";
-            }
-            else
-            {
-                message = "Could not evaluate type: " + element.GetType() + " please pass a delegate that defines the check for occupation.";
-            }
-            throw new NotSupportedException(message);
+            //If you reach this code, the element has a value, but it's type could not be determined.
+            throw new NotSupportedException("Could not evaluate type: " + element.GetType() + " please pass a delegate that defines the check for occupation.");
         }
     }
 }
