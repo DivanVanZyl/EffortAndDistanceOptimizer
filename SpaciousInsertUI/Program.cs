@@ -12,7 +12,8 @@ foreach(var item in list)
 
 var alg = new SpaciousInsert();
 
-int optimalIndex = alg.NextOptimalIndex(list,(x) => !x);
+int optimalIndex = alg.NextOptimalIndex(list);    //Simple example with none of the optional params passed.
+//int optimalIndex = alg.NextOptimalIndex(list,(x) => !x);  //Example of call with delegate passed.
 list[optimalIndex] = true;
 
 Console.WriteLine();
